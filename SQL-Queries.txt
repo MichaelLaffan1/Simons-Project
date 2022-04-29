@@ -1,0 +1,28 @@
+These are the SQL queries I would have implemented
+
+Number of restaurants in Manhattan that have B or better grade:
+SELECT COUNT(CAMIS)
+FROM NYCRestaurants
+WHERE BORO = "Manhattan"
+AND GRADE <= 'B';
+
+The average score of Pizza restaurants in Queens:
+SELECT AVG(SCORE)
+FROM NYCRestaurants
+WHERE BORO = "Queens"
+AND CUISINE_DESCRIPTION = "Pizza";
+
+List all the unique restaurant names in zip code 10010 that have a grade A
+in alphabetical order:
+SELECT DBA
+FROM NYCRestaurants
+WHERE ZIPCODE = 10010
+AND GRADE = "A"
+ORDER BY DBA ASC;
+
+Unique Query:
+List the zipcodes and the names of the restaurants that had no violations listed:
+SELECT DBA, ZIPCODE
+FROM NYCRestaurants
+WHERE VIOLATION_CODE = NULL;
+
